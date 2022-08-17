@@ -127,3 +127,28 @@ function DisplayTodos () {
 
 	})
 }
+
+const btn = document.querySelector ("#fetch");
+const contenedor = document.querySelector (".contenedor");
+
+const obtenerDatos = async ()=>{
+
+    let response = await fetch ("archivo.json");
+    let result = await response.json();
+    console.log(result);
+    result.forEach(persona =>{
+      contenedor.innerHTML += `
+                        <div>
+                            <h3>${persona.name}</h3>
+                            <p>${persona.username}</p>
+                            <p>${persona.email}</p>
+                          </div> `
+    }) 
+  }  
+
+  /* obtenerDatos() */
+
+
+btn.onclick = () => {
+  obtenerDatos();
+} 
