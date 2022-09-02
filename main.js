@@ -1,12 +1,12 @@
 let boton = document.getElementById('SWEET-ALERT');
 boton.addEventListener("click", ()=>{
-  Swal.fire({
+	Swal.fire({
     position: 'top-end',
     icon: 'success',
     title: 'Ha sido guardado con éxito',
     showConfirmButton: false,
     timer: 1500
-  });
+	});
 })
 
 window.addEventListener('load', () => {
@@ -137,18 +137,18 @@ const obtenerDatos = async ()=>{
     let result = await response.json();
     console.log(result);
     result.forEach(persona =>{
-      contenedor.innerHTML += `
+		contenedor.innerHTML += `
                         <div>
                             <h3>${persona.name}</h3>
                             <p>${persona.username}</p>
                             <p>${persona.email}</p>
-                          </div> `
+                        </div> `
     }) 
-  }  
+}  
 
   /* obtenerDatos() */
 
 
 btn.onclick = () => {
-  obtenerDatos();
+	obtenerDatos();
 } 
